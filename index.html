@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="main">
@@ -23,12 +29,36 @@
       <div id="page2">
         <div id="elem1" class="elem">
           <img data-scroll data-scroll-speed="1" src="img1.avif" alt="" />
+          <div data-scroll data-scroll-speed="-1" class="dets">
+            <div class="navi">
+              <div><img id="dot" src="dot-svgrepo-com.svg" alt="" /></div>
+              <div>SHOP</div>
+              <div><b>PANTRY</b></div>
+              <div><img id="arrow" src="rightArrow.svg" alt="" /></div>
+            </div>
+          </div>
         </div>
         <div id="elem2" class="elem">
           <img data-scroll data-scroll-speed="1" src="img2.avif" alt="" />
+          <div data-scroll data-scroll-speed="-1" id="dets2" class="dets">
+            <div id="navi2" class="navi">
+              <div><img id="dot" src="dot-svgrepo-com.svg" alt="" /></div>
+              <div>SHOP</div>
+              <div><b>ALEMAIS</b></div>
+              <div><img id="arrow" src="rightArrow.svg" alt="" /></div>
+            </div>
+          </div>
         </div>
         <div id="elem3" class="elem">
           <img data-scroll data-scroll-speed="1" src="img3.avif" alt="" />
+          <div data-scroll data-scroll-speed="-1" id="dets3" class="dets">
+            <div class="navi" id="navi3">
+              <div><img id="dot" src="dot-svgrepo-com.svg" alt="" /></div>
+              <div>SHOP</div>
+              <div><b>SOAPS FOR HOPE</b></div>
+              <div><img id="arrow" src="rightArrow.svg" alt="" /></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -43,3 +73,5 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<!-- 1 hr out of 2 hr something -->
