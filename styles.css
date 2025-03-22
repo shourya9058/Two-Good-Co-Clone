@@ -51,6 +51,7 @@
 }
 
 #icons {
+    display: flex;
     padding: 10px;
     border-radius: 50px;
     background-color: #F7F7F7;
@@ -364,7 +365,7 @@ body{
         margin-bottom: 3vw;
     }
 
-    #page2 .elem .dets {
+    /* #page2 .elem .dets {
         height: 40px;
         border-radius: 50px;
         width: 70%;
@@ -372,7 +373,7 @@ body{
         z-index: 9;
         background-color: rgb(229, 156, 186);
 
-    }
+    } */
 
     #page3 {
         min-height: 120vh;
@@ -401,3 +402,208 @@ body{
     }
 
 }
+
+/* Add this to your existing styles.
+```css project="Two Good Co" file="styles.css" type="html"
+/* Add this to your existing styles.css file */
+
+/* Hamburger Menu Styles */
+.hamburger-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 101;
+  }
+  
+  .hamburger-btn span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger animation */
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  /* Full-screen overlay menu */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    overflow-y: auto;
+  }
+  
+  .nav-overlay.active {
+    transform: translateY(0);
+  }
+  
+  .nav-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-close, .cart-icon {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    text-align: right;
+    padding: 0;
+  }
+  
+  .main-nav ul li {
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-overlay.active .main-nav ul li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Staggered animation for menu items */
+  .nav-overlay.active .main-nav ul li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-overlay.active .main-nav ul li:nth-child(2) { transition-delay: 0.15s; }
+  .nav-overlay.active .main-nav ul li:nth-child(3) { transition-delay: 0.2s; }
+  .nav-overlay.active .main-nav ul li:nth-child(4) { transition-delay: 0.25s; }
+  .nav-overlay.active .main-nav ul li:nth-child(5) { transition-delay: 0.3s; }
+  .nav-overlay.active .main-nav ul li:nth-child(6) { transition-delay: 0.35s; }
+  .nav-overlay.active .main-nav ul li:nth-child(7) { transition-delay: 0.4s; }
+  .nav-overlay.active .main-nav ul li:nth-child(8) { transition-delay: 0.45s; }
+  .nav-overlay.active .main-nav ul li:nth-child(9) { transition-delay: 0.5s; }
+  
+  .main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .main-nav ul li a:hover {
+    color: #ccc;
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    transition-delay: 0.3s;
+  }
+  
+  .nav-overlay.active .footer-nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .footer-section {
+    margin-right: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #999;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ccc;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .footer-nav {
+      flex-direction: column;
+    }
+    
+    .footer-section {
+      margin-bottom: 30px;
+    }
+    
+    .main-nav ul li a {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-nav ul li a {
+      font-size: 1.5rem;
+    }
+    
+    .footer-section h3 {
+      font-size: 0.8rem;
+    }
+    
+    .footer-section ul li a {
+      font-size: 0.8rem;
+    }
+  }

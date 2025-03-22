@@ -1,3 +1,48 @@
+// Add this to your existing script.js file
+
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navClose = document.querySelector('.nav-close');
+    
+    // Function to open the menu
+    function openMenu() {
+        navOverlay.classList.add('active');
+        hamburgerBtn.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    }
+    
+    // Function to close the menu
+    function closeMenu() {
+        navOverlay.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+    
+    // Event listeners
+    hamburgerBtn.addEventListener('click', openMenu);
+    navClose.addEventListener('click', closeMenu);
+    
+    // Close menu when clicking escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navOverlay.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Initialize Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+    });
+
+    // Your existing JavaScript code below this line
+});
+
+
+
 function locomotiveAnimation() {
     gsap.registerPlugin(ScrollTrigger);
   
@@ -205,3 +250,112 @@ function cursorAnimation() {
     });
   }
   cursorAnimation();
+
+  // Add this to your existing script.js file
+
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements - fixing selector to match the HTML
+    const hamburgerBtn = document.querySelector('.ri-menu-fill');
+    
+    // Create nav overlay since it doesn't exist in the HTML
+    const navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    navOverlay.innerHTML = `
+        <div class="nav-container">
+            <div class="nav-header">
+                <div class="nav-close">×</div>
+            </div>
+            <div class="nav-links">
+                <a href="#">Shop</a>
+                <a href="#">Catering</a>
+                <a href="#">Donate</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(navOverlay);
+    
+    const navClose = document.querySelector('.nav-close');
+    
+    // Function to open the menu
+    function openMenu() {
+        navOverlay.classList.add('active');
+        hamburgerBtn.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    }
+    
+    // Function to close the menu
+    function closeMenu() {
+        navOverlay.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+    
+    // Event listeners
+    hamburgerBtn.addEventListener('click', openMenu);
+    navClose.addEventListener('click', closeMenu);
+    
+    // Close menu when clicking escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navOverlay.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Initialize Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+    });
+
+    // Custom cursor
+    const cursor = document.querySelector("#cursor");
+    
+    document.addEventListener("mousemove", function(dets) {
+        cursor.style.left = dets.x + "px";
+        cursor.style.top = dets.y + "px";
+    });
+    
+    // GSAP animations
+    gsap.to("#nav", {
+        backgroundColor: "#000",
+        duration: 0.5,
+        height: "110px",
+        scrollTrigger: {
+            trigger: "#nav",
+            scroller: "#main",
+            start: "top -10%",
+            end: "top -11%",
+            scrub: 1
+        }
+    });
+
+    // Video container animation
+    gsap.to("#video-container", {
+        width: "100%",
+        scrollTrigger: {
+            trigger: "#video-container",
+            scroller: "#main",
+            start: "top 55%",
+            end: "top 30%",
+            scrub: 2
+        }
+    });
+    
+    // Page 3 animations
+    gsap.from(".child", {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: "#page3",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 65%",
+            scrub: 1
+        }
+    });
+});
