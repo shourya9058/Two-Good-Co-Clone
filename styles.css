@@ -1,3 +1,67 @@
+@font-face {
+    font-family: Futura;
+    src: url(./Futura-Bold.ttf);
+}
+@font-face {
+    font-family: Gilroy;
+    src: url(./Gilroy-Medium.ttf);
+}
+
+#nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#links {
+    padding: 10px;
+}
+
+#nav-part1 {
+    /* background-color: RED; */
+    height: 82px;
+    overflow: hidden;
+}
+
+#nav-part1 svg {
+    display: block;
+}
+
+#nav-part2 #links a {
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+}
+
+#icons {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #F7F7F7;
+}
+
+#nav-part2 #icons i {
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 100;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,6 +79,7 @@ html,body{
 
 body{
     background-color: #f7f7f7;
+    font-family: 'Futura Bold', sans-serif;
 }
 
 #cursor{
@@ -36,11 +101,12 @@ body{
 }
 
 #page1 h1{
-    font-size: 15.8vw;
-    font-family: 'Futura';
+    font-size: 14vw;
+    font-family: 'Futura Bold', sans-serif;
     text-transform: uppercase;
     line-height: 14vw;
-    letter-spacing: -8px;
+    letter-spacing: -7px;
+    font-weight: 800;
 }
 
 #video-container{
@@ -64,7 +130,7 @@ body{
     font-size: 1.3vw;
     position: fixed;
     text-transform: uppercase;
-    font-family: futura;
+    font-family: 'Futura Bold', sans-serif;;
     border-radius: 50%;
     opacity: 0;
     scale: 0;
@@ -117,14 +183,14 @@ body{
 }
 
 #page2 .elem #dets2{
-    background-color: #d0d8e3;
+    background-color: #ecdcd5;
 }
 #page2 .elem #dets3{
-    background-color: #ecdcd5;
+    background-color: #d0d8e3;
 }
 
 #page2 .elem .dets #navi3{
-    background-color: #a3745e; 
+    background-color: #8AAAD6; 
     height: 50px;
     border-radius: 50px;
     width: 100%;
@@ -159,7 +225,7 @@ body{
 }
 
 #page2 .elem .dets #navi2{
-    background-color: #8AAAD6;
+    background-color: #a3745e;
     height: 50px;
     border-radius: 50px;
     width: 100%;
@@ -250,4 +316,19 @@ body{
     }
      */
     
+     .child {
+        height: 54vh;
+        width: 88vw;
+        /* background-color: red; */
+        /* border: 2px solid #000; */
+        position: relative;
+        padding: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .child img {
+        height: 100%;
+    }
 }
